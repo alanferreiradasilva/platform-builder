@@ -1,4 +1,5 @@
-﻿using PlatformBuilder.Abstractions.Services;
+﻿using FluentAssertions;
+using PlatformBuilder.Abstractions.Services;
 using PlatformBuilder.Core.Services;
 using Xunit;
 
@@ -21,7 +22,7 @@ namespace PlatformBuilder.UnitTests.Services
         {
             var result = _service.IsPalindrome(value);
 
-            Assert.True(result);
+            result.Should().Be(true);
         }
 
         [Theory]
@@ -31,7 +32,7 @@ namespace PlatformBuilder.UnitTests.Services
         {
             var result = _service.IsPalindrome(value);
 
-            Assert.False(result);
+            result.Should().Be(false);
         }
     }
 }

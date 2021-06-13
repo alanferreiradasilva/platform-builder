@@ -22,6 +22,7 @@ namespace PlatformBuilder.WebApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddScoped<IPalindromeService, PalindromeService>();
+            services.AddScoped<IBinarySearchTreeService, BinarySearchTreeService>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
